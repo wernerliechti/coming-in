@@ -11,18 +11,7 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
-const CLIENT_ID_KEY = "hype_client_id";
 const DISPLAY_NAME_KEY = "hype_display_name";
-
-function getClientId() {
-  let id = localStorage.getItem(CLIENT_ID_KEY);
-  if (!id) {
-    id = (crypto.randomUUID && crypto.randomUUID()) ||
-      `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    localStorage.setItem(CLIENT_ID_KEY, id);
-  }
-  return id;
-}
 
 function normalizeName(name) {
   return name
@@ -31,12 +20,6 @@ function normalizeName(name) {
     .replace(/[^a-z0-9äöüß]+/gi, "-")
     .replace(/^-+|-+$/g, "") || "anonym";
 }
-
-function docIdFor(name, clientId) {
-  return `${normalizeName(name)}__${clientId}`;
-}
-
-const clientId = getClientId();
 
 const nameInput = document.getElementById("hype-name");
 const hypeBtn = document.getElementById("hype-btn");
@@ -47,8 +30,9 @@ const statusEl = document.getElementById("hype-status");
 const savedName = localStorage.getItem(DISPLAY_NAME_KEY) || "";
 if (nameInput) nameInput.value = savedName;
 
-let myDocId = savedName ? docIdFor(savedName, clientId) : null;
+let myDocId = savedName ? normalizeName(savedName) : null;
 let unsubscribeMine = null;
+let debounceTimer = null;
 
 function watchMine(docId) {
   if (unsubscribeMine) unsubscribeMine();
@@ -64,6 +48,17 @@ function watchMine(docId) {
 }
 
 watchMine(myDocId);
+
+if (nameInput) {
+  nameInput.addEventListener("input", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const name = nameInput.value.trim();
+      myDocId = name ? normalizeName(name) : null;
+      watchMine(myDocId);
+    }, 300);
+  });
+}
 
 if (hypeBtn) {
   hypeBtn.addEventListener("click", async () => {
@@ -81,7 +76,7 @@ if (hypeBtn) {
     localStorage.setItem(DISPLAY_NAME_KEY, rawName);
     if (statusEl) statusEl.textContent = "";
 
-    const newDocId = docIdFor(rawName, clientId);
+    const newDocId = normalizeName(rawName);
     if (newDocId !== myDocId) {
       myDocId = newDocId;
       watchMine(myDocId);
