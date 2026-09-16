@@ -170,6 +170,31 @@ input[type="text"]:focus {
 }
 
 /* Countdown */
+.countdown-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 600px) {
+  .countdown-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.event-action {
+  text-align: center;
+  padding: 14px 16px;
+}
+
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

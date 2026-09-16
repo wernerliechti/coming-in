@@ -21,26 +21,33 @@
       </aside>
 
       <main class="main-col">
-        <section class="card countdown-card">
-          <div class="countdown-grid">
-            <div class="countdown-unit">
-              <div class="num" id="cd-days">–</div>
-              <div class="label">Tage</div>
+        <div class="countdown-row">
+          <section class="card countdown-card">
+            <div class="countdown-grid">
+              <div class="countdown-unit">
+                <div class="num" id="cd-days">–</div>
+                <div class="label">Tage</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="num" id="cd-hours">–</div>
+                <div class="label">Stunden</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="num" id="cd-minutes">–</div>
+                <div class="label">Minuten</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="num" id="cd-seconds">–</div>
+                <div class="label">Sekunden</div>
+              </div>
             </div>
-            <div class="countdown-unit">
-              <div class="num" id="cd-hours">–</div>
-              <div class="label">Stunden</div>
-            </div>
-            <div class="countdown-unit">
-              <div class="num" id="cd-minutes">–</div>
-              <div class="label">Minuten</div>
-            </div>
-            <div class="countdown-unit">
-              <div class="num" id="cd-seconds">–</div>
-              <div class="label">Sekunden</div>
-            </div>
-          </div>
-        </section>
+          </section>
+
+          <section class="card event-actions">
+            <a href="https://www.google.com/maps/place/47%C2%B000'10.7%22N+7%C2%B041'58.6%22E/@47.0029719,7.6989573,187" target="_blank" rel="noopener" class="btn btn-secondary event-action">📍 Weg zum Event</a>
+            <a href="#" id="calendar-link" class="btn btn-secondary event-action">📅 Im Kalender speichern</a>
+          </section>
+        </div>
 
         <section class="card hype-core">
           <h2>🔥 Hype Counter</h2>
@@ -68,6 +75,7 @@
   </div>
 
   <script src="assets/countdown.js"></script>
+  <script src="assets/calendar.js"></script>
   <script type="module" src="assets/hype.js"></script>
 </body>
 </html>
