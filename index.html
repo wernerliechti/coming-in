@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wernus Comming In</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap wide">
+    <header class="header-centered">
+      <h1>Wernus <span class="brand">Comming In</span></h1>
+    </header>
+
+    <div class="page-layout">
+      <aside class="card leaderboard-pin">
+        <h2>🔥 Leaderboard</h2>
+        <ul class="leaderboard" id="hype-leaderboard">
+          <li class="hint">Lädt...</li>
+        </ul>
+      </aside>
+
+      <main class="main-col">
+        <section class="card countdown-card">
+          <div class="countdown-grid">
+            <div class="countdown-unit">
+              <div class="num" id="cd-days">–</div>
+              <div class="label">Tage</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="num" id="cd-hours">–</div>
+              <div class="label">Stunden</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="num" id="cd-minutes">–</div>
+              <div class="label">Minuten</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="num" id="cd-seconds">–</div>
+              <div class="label">Sekunden</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card hype-core">
+          <h2>🔥 Hype Counter</h2>
+          <div class="name-row">
+            <input type="text" id="hype-name" placeholder="Dein Name" maxlength="49" />
+          </div>
+          <div class="hype-tap-area">
+            <div class="hype-count" id="hype-my-count">0</div>
+            <button type="button" class="btn" id="hype-btn">🔥 HYPE!</button>
+            <p class="hint" id="hype-status"></p>
+          </div>
+        </section>
+
+        <section class="card quiz-teaser">
+          <h2>Wie gut kennst du Wernu?</h2>
+          <p>Beantworte 5 Fragen und bekomme rein gar nichts. Aber evtl lernst du Wernu etwas besser kennen.</p>
+          <a href="quiz.html" class="btn btn-secondary">Quiz starten</a>
+        </section>
+      </main>
+    </div>
+
+    <footer>Wernus Comming In &middot; comingin.wernerliechti.ch</footer>
+  </div>
+
+  <script src="assets/countdown.js"></script>
+  <script type="module" src="assets/hype.js"></script>
+</body>
+</html>

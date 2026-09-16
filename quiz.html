@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz &middot; Wernus Comming In</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Mini-<span class="brand">Quiz</span></h1>
+      <p class="tagline">Wie gut kennst du Wernu wirklich?</p>
+    </header>
+
+    <a href="index.html" class="back-link">← Zurück</a>
+
+    <section class="card" id="quiz-body">
+      <p class="quiz-progress" id="quiz-progress"></p>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+      <div style="margin-top: 20px; text-align: right;">
+        <button type="button" class="btn" id="quiz-next" style="display: none;">Nächste Frage</button>
+      </div>
+    </section>
+
+    <section class="card" id="quiz-result" style="display: none;"></section>
+
+    <footer>Wernus Comming In &middot; comingin.wernerliechti.ch</footer>
+  </div>
+
+  <script src="assets/quiz.js"></script>
+</body>
+</html>
