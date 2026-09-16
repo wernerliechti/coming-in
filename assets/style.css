@@ -349,9 +349,13 @@ input[type="text"]:focus {
   margin: 16px 0;
 }
 
-footer {
-  text-align: center;
-  color: var(--grey);
-  font-size: 0.85rem;
-  margin-top: 40px;
+.flyer-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.flyer-card img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
