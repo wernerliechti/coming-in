@@ -1,28 +1,33 @@
 const QUESTIONS = [
   {
+    question: "Worüber kann Wernu nicht aufhören zu reden?",
+    options: ["Bitcoin", "Fotografie", "Quantenmechanik", "Alle 3"],
+    correct: "Alle 3",
+  },
+  {
+    question: "Wonach ist Wernu süchtig?",
+    options: ["Cola Zero", "Kokain", "Fischbrötchen", "Instagram"],
+    correct: "Cola Zero",
+  },
+  {
     question: "Was bekommt Wernu am liebsten geschenkt?",
-    options: ["Fleisch", "Whisky & Zigarren", "Socken", "Gutscheine"],
-    correct: "Whisky & Zigarren",
+    options: [
+      "Fleisch, Whisky, Zigarren",
+      "Wein, Bier, Gin",
+      "Socken, Unterhosen, Handschuhe",
+      "Gummibärli, Energy Drinks, Schoggi",
+    ],
+    correct: "Fleisch, Whisky, Zigarren",
   },
   {
     question: "Was ist die grösste Menge Bier, die Wernu an einem Abend getrunken hat?",
-    options: ["6L", "Berlin", "3L", "Ein Fass"],
-    correct: "Berlin",
+    options: ["6L, in Berlin", "2L, in Bern", "3.5L, in Zürich", "10L, in St Moriz"],
+    correct: "6L, in Berlin",
   },
   {
     question: "Wieviele Geschwister hat Wernu?",
     options: ["1", "2", "3", "4"],
     correct: "3",
-  },
-  {
-    question: "Worüber kann Wernu nicht aufhören zu reden?",
-    options: ["Bitcoin", "Fotografie", "Beste Zubereitungsart Kartoffel", "Alle 3"],
-    correct: "Alle 3",
-  },
-  {
-    question: "Wonach ist Wernu süchtig?",
-    options: ["Coca Cola Zero", "Kokain", "Fischbrötchen"],
-    correct: "Coca Cola Zero",
   },
 ];
 
